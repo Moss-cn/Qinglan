@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>青岚OS · 校园网离线镜像</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 开机 -->
+  <div id="boot" class="boot">
+    <pre id="boot-log" class="boot-log"></pre>
+    <div id="boot-enter" class="boot-enter" hidden>
+      <button class="btn-primary" onclick="ENGINE.bootEnter()">接入校园网 ▸</button>
+    </div>
+  </div>
+
+  <!-- 主界面 -->
+  <div id="main" class="main" hidden>
+    <div id="topbar" class="topbar">
+      <span class="brand">青岚OS</span>
+      <button class="tb-app" data-app="bbs">💬 论坛</button>
+      <button class="tb-app" data-app="mail">✉️ 邮件</button>
+      <button class="tb-app" data-app="photos">🖼️ 相册</button>
+      <button class="tb-app" data-app="footage">🎬 影像</button>
+      <button class="tb-app" data-app="web">🌐 官网</button>
+      <button class="tb-app" data-app="chat">👁 岚</button>
+      <button class="tb-app" data-app="ledger">📓 线索</button>
+      <button class="tb-help" onclick="ENGINE.showHelp()">？帮助</button>
+      <span class="spacer"></span>
+      <button class="tb-guest" onclick="TERM.run('login guest')">以访客进入</button>
+      <button class="tb-reboot" onclick="location.reload()">重启</button>
+    </div>
+
+    <div id="terminal" class="terminal">
+      <div id="term-out" class="term-out"></div>
+      <div class="term-input-row">
+        <span id="term-prompt" class="term-prompt">guest@qinglan:~$</span>
+        <input id="term-in" class="term-in" autocomplete="off" spellcheck="false" autofocus />
+      </div>
+    </div>
+
+    <div id="windows" class="windows"></div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="js/crypto.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/fs.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/apps.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>

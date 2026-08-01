@@ -1,0 +1,52 @@
+{
+  "name": "qinglan-campus-net",
+  "version": "1.0.0",
+  "private": true,
+  "description": "青岚一中校园网 · 离线解谜游戏（伪系统类）",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win --x64",
+    "dist:win-msix": "electron-builder --win msix --x64"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.qinglan.campusnet",
+    "productName": "青岚一中校园网",
+    "copyright": "© 2026 离线 Demo",
+    "files": [
+      "index.html",
+      "css/**/*",
+      "js/**/*",
+      "assets/**/*",
+      "启动.command",
+      "启动.bat"
+    ],
+    "icon": "assets/icon-512.png",
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.games",
+      "icon": "assets/icon-512.png"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon-512.png",
+      "artifactName": "青岚一中校园网-${version}-setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "msix": {
+      "identityName": "qinglanos.campusnet",
+      "publisher": "CN=Qinglan",
+      "publisherDisplayName": "Qinglan",
+      "applicationId": "qinglanos.campusnet"
+    }
+  }
+}
