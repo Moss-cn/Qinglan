@@ -1,0 +1,26 @@
+{
+  "name": "青岚一中校园网",
+  "short_name": "青岚OS",
+  "description": "纯网页离线解谜游戏。在一所已停办中学的校园网镜像里，通过终端命令与图形界面，揭开学生苏黎留下的真相。",
+  "start_url": "/Qinglan/",
+  "scope": "/Qinglan/",
+  "id": "https://moss-cn.github.io/Qinglan/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "theme_color": "#0a0e14",
+  "background_color": "#0a0e14",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["games", "puzzle"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "label": "青岚OS主界面" }
+  ],
+  "prefer_related_applications": false,
+  "iarc_rating_id": "",
+  "related_applications": []
+}

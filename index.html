@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
   <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <!-- 开机 -->
@@ -54,5 +55,14 @@
   <script src="js/terminal.js"></script>
   <script src="js/apps.js"></script>
   <script src="js/engine.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/Qinglan/sw.js', { scope: '/Qinglan/' })
+          .then(reg => console.log('SW registered:', reg.scope))
+          .catch(err => console.warn('SW reg failed:', err));
+      });
+    }
+  </script>
 </body>
 </html>
